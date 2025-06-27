@@ -7,6 +7,9 @@ const messagesRouter = require("./routes/messages.router");
 
 const app = express();
 
+app.set("view engine", "hbs");
+app.set("views", path.join(__dirname, "views"));
+
 const PORT = 3000;
 
 app.use((req, res, next) => {
@@ -18,6 +21,13 @@ app.use((req, res, next) => {
 
 app.use("/site", express.static(path.join(__dirname, "public")));
 app.use(express.json());
+
+app.get("/", (req, res) => {
+  res.render("index", {
+    title: "HOME",
+    caption: "My name is Sailesh Gurung",
+  });
+});
 
 app.use("/friends", friendsRouter);
 
