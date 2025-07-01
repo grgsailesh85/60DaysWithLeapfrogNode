@@ -13,16 +13,7 @@ function isHabitablePlanet(planet) {
     planet["koi_prad"] < 1.6
   );
 }
-/*
-const promise = new Promise((resolve, reject) => {
-    resolve(42)
-});
- promise.then((result) => {
 
-})
-const result = await promise;
-console.log(result)
-*/
 
 function loadPlanetsData() {
   return new Promise((resolve, reject) => {
