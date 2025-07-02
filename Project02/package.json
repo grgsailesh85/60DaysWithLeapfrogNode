@@ -19,5 +19,8 @@
   "type": "commonjs",
   "devDependencies": {
     "concurrently": "^9.2.0"
+  },
+  "dependencies": {
+    "morgan": "^1.10.0"
   }
 }
