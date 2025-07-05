@@ -1,4 +1,4 @@
-const { httpAbortLaunch } = require("../../../../client/src/hooks/requests");
+// const { httpAbortLaunch } = require("../../../../client/src/hooks/requests");
 const {
   getAllLaunches,
   addNewLaunch,
@@ -43,12 +43,12 @@ function httpAbortLaunch(req, res) {
       error: "Launch not found",
     });
   }
-
-  // if launch does exist
+  const aborted = abortLaunchById(launchId);
   return res.status(200).json(aborted);
 }
 
 module.exports = {
   httpGetAllLaunches,
   httpAddNewLaunch,
+  httpAbortLaunch,
 };

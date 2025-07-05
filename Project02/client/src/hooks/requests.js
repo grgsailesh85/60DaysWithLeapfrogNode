@@ -16,7 +16,7 @@ async function httpGetLaunches() {
 async function httpSubmitLaunch(launch) {
   try {
     return await fetch(`${API_URL}/launches`, {
-      method: "POST",
+      method: "post",
       headers: {
         "Content-Type": "application/json",
       },
