@@ -15,7 +15,7 @@ const launch = {
 
 launches.set(launch.flightNumber, launch);
 
-function existsLaunchWithId(launchId) {
+function existsLaunchWithId(launchId) { 
   return launches.has(launchId);
 }
 
