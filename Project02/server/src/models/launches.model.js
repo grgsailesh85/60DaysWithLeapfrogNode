@@ -1,3 +1,5 @@
+// const launches = require("./launches.mongo");
+
 const launches = new Map();
 
 let latestFlightNumber = 100;
@@ -15,7 +17,7 @@ const launch = {
 
 launches.set(launch.flightNumber, launch);
 
-function existsLaunchWithId(launchId) { 
+function existsLaunchWithId(launchId) {
   return launches.has(launchId);
 }
 
@@ -25,7 +27,7 @@ function getAllLaunches() {
 
 function addNewLaunch(launch) {
   latestFlightNumber++;
-  launches.set( 
+  launches.set(
     latestFlightNumber,
     Object.assign(launch, {
       success: true,
