@@ -12,19 +12,22 @@ const MONGO_URL =
 
 const server = http.createServer(app);
 
-mongoose.connection.on('open', () => {
-  console.log('MongoDB connection established successfully')
-})
+mongoose.connection.on("open", () => {
+  console.log("MongoDB connection established successfully");
+});
 
-mongoose.connection.on('error', (err) => {
-  console.error('MongoDB connection error:', err)
-})
+mongoose.connection.on("error", (err) => {
+  console.error("MongoDB connection error:", err);
+});
 
 async function startServer() {
-  await mongoose.connect(MONGO_URL, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-  });
+  await mongoose.connect(
+    MONGO_URL
+    //   {
+    //   useNewUrlParser: true,
+    //   useUnifiedTopology: true
+    // }
+  );
   await loadPlanetsData();
 
   server.listen(PORT, () => {
