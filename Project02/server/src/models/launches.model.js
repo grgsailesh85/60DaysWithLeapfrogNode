@@ -83,11 +83,11 @@ async function scheduleNewLaunch(launch) {
 //   );
 // }
 
-function abortLaunchById(launchId) {
-  const aborted = launches.get(launchId);
+async function abortLaunchById(launchId) {
+  const aborted =await launches.get(launchId);
   aborted.upcoming = false;
   aborted.success = false;
-  return aborted;
+  return aborted.ok === 1 && aborted.nModified === 1;
 }
 
 module.exports = {
